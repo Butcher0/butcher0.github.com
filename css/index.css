@@ -483,11 +483,11 @@ body.docs #nav {
 }
 #logo {
   display: inline-block;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 40px;
-  color: #409eff;
+  color: #000;
   font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 900;
+  font-weight: 500;
 }
 #logo img {
   vertical-align: middle;

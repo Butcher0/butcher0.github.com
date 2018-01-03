@@ -50,8 +50,11 @@ pre .nginx .title,
 pre .tex .special {
   color: #2973b7;
 }
+pre .meta {
+  color: #6c3365;
+}
 pre .class .title {
-  color: #fff;
+  color: #000;
 }
 pre .symbol,
 pre .symbol .string,
@@ -60,7 +63,7 @@ pre .regexp {
   color: #409eff;
 }
 pre .title {
-  color: #a6e22e;
+  color: #525252;
 }
 pre .tag .value,
 pre .string,

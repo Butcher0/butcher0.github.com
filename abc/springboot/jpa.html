@@ -90,9 +90,9 @@
   </ul>
 </li>
 
-<li></li>
+<li>杂记</li>
 <li>资源</li>
-<li>参与</li>
+<li>关于</li>
 
   </ul>
 </div>
@@ -120,9 +120,9 @@
   </ul>
 </li>
 
-<li></li>
+<li>杂记</li>
 <li>资源</li>
-<li>参与</li>
+<li>关于</li>
 
     </ul>
     <div class="list">
@@ -165,7 +165,7 @@
 <li>Spring Data JPA - 使实现基于JPA repositories变得容易。</li>
 <li>Spring ORMs - Spring框架对ORM的核心支持。</li>
 </ul>
-<p>在pom.xml中dependencies节点下加入JPA和Mysql驱动依赖。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.data<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在pom.xml中dependencies节点下加入JPA和Mysql驱动依赖。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="配置数据源和JPA"><a href="#配置数据源和JPA" class="headerlink" title="配置数据源和JPA"></a>配置数据源和JPA</h2><p>在Mysql数据库中创建一个数据库base。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> base;</span><br></pre></td></tr></table></figure></p>
 <p>在application.properties中添加配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#datasource </span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/base?useUnicode=yes&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;connectionCollation=utf8_general_ci </span><br><span class="line">spring.datasource.username=root </span><br><span class="line">spring.datasource.password= </span><br><span class="line">spring.datasource.driver-class-name=com.mysql.jdbc.Driver </span><br><span class="line"></span><br><span class="line">#JPA </span><br><span class="line">spring.jpa.show-sql=true      </span><br><span class="line">spring.jpa.generate-ddl=true </span><br><span class="line">spring.jpa.hibernate.ddl-auto=create</span><br></pre></td></tr></table></figure>

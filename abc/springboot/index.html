@@ -3,18 +3,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <title>起步 — ZhangSanShi</title>
+    <title>HelloWorld — ZhangSanShi</title>
     <meta charset="utf-8">
     <meta name="description" content="ZhangSanShi's Personal Website">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="起步 — ZhangSanShi">
+    <meta property="og:title" content="HelloWorld — ZhangSanShi">
     <meta property="og:description" content="ZhangSanShi's Personal Website">
     <meta property="og:image" content="https://zhangsanshi.com//images/logo.png">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="起步 — ZhangSanShi">
+    <meta name="twitter:title" content="HelloWorld — ZhangSanShi">
     <meta name="twitter:description" content="ZhangSanShi's Personal Website">
     <meta name="twitter:image" content="https://zhangsanshi.com/images/logo.png">
 
@@ -50,7 +50,7 @@
 
     <!-- this needs to be loaded before guide's inline scripts -->
     <script src="/js/vue.js"></script>
-    <script>window.PAGE_TYPE = "SpringBoot"</script>
+    <script>window.PAGE_TYPE = "springboot"</script>
 
     <!-- ga -->
     <script>
@@ -71,7 +71,7 @@
     <div id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png">
-    <span>Full Stack Dev</span>
+    <span>ZhangSanShi</span>
   </a>
   <ul id="nav">
     <li>
@@ -131,7 +131,13 @@
   <!--  
     -->
     <li>
-      <a href="/abc/springboot/index.html" class="sidebar-link current">起步</a>
+      <a href="/abc/springboot/index.html" class="sidebar-link current">HelloWorld</a>
+    </li>
+  
+  <!--  
+    -->
+    <li>
+      <a href="/abc/springboot/jpa.html" class="sidebar-link">使用JPA进行持久化</a>
     </li>
   
 </ul>
@@ -141,7 +147,7 @@
 </div>
 
 
-<div class="content SpringBoot with-sidebar ">
+<div class="content springboot with-sidebar ">
   
     
       <div id="ad">
@@ -150,7 +156,7 @@
     
   
   
-    <h1>起步</h1>
+    <h1>HelloWorld</h1>
   
   
   <h2 id="Spring-Boot-是什么"><a href="#Spring-Boot-是什么" class="headerlink" title="Spring Boot 是什么"></a>Spring Boot 是什么</h2><p>使用Spring Boot，可以轻松地创建一个独立的，产品级的可运行应用。大多数Spring Boot应用程序只需要很少的Spring配置。<br>Spring Boot的目标：</p>
@@ -168,14 +174,23 @@
 <li><a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">Maven 3.2+</a></li>
 </ul>
 <p>本文是使用Maven来构建Spring Boot项目,你也可以使用自己喜欢的工具，如<a href="https://gradle.org/install/" target="_blank" rel="noopener">Gradle 2.3+</a>。Maven安装后，需要在Eclipse中配置使用，你也可以选择使用Eclipse自带的Maven, 不用另外安装Maven。</p>
-<h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><p>打开<a href="http://start.spring.io/" target="_blank" rel="noopener">Spring Initializr</a>网站 , 修改Article为springboot，并且添加Dependencies：Web, DevTools。然后点击Generate Project, 将会下载一个zip包到本地。<br><img src="/images/starter.png" alt=""></p>
+<h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><p>打开<a href="http://start.spring.io/" target="_blank" rel="noopener">Spring Initializr</a>网站 , 修改Article为springboot，并且添加Dependencies：Web, DevTools。然后点击Generate Project, 将会下载一个zip包到本地。<br><img src="/images/starter.png" alt="starter"></p>
 <p>解压包后，<code>Import</code> Existing Maven Projects到Eclipse， Maven将会下载相关的库到本地。</p>
-<p>完成后的项目结构:<br><img src="/images/init-package.png" alt=""></p>
+<p>完成后的项目结构:<br><img src="/images/init-package.png" alt="packages"></p>
 <h3 id="创建一个Restful-Web-Service"><a href="#创建一个Restful-Web-Service" class="headerlink" title="创建一个Restful Web Service"></a>创建一个Restful Web Service</h3><p>创建包com.example.springboot.controller，添加类HelloController  </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.springboot.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello World!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>右键SpringBootApplication.class文件, Run As -&gt; Java Application</p>
-<p>运行程序后，打开浏览器，访问<a href="http://localhost:8080/hello，" target="_blank" rel="noopener">http://localhost:8080/hello，</a> 显示<br>Hello World!</p>
+<p>运行程序后，打开浏览器，访问<a href="http://localhost:8080/hello" target="_blank" rel="noopener">http://localhost:8080/hello</a>。 显示<br>Hello World!</p>
 <p>因为我们添加了DevTools依赖，所以每当对项目作出更改，项目会自动重新加载，不用手动重启项目。</p>
+<h3 id="SpringBootApplication注解"><a href="#SpringBootApplication注解" class="headerlink" title="@SpringBootApplication注解"></a>@SpringBootApplication注解</h3><p>@SpringBootApplication注解等同于使用@Configuration，@EnableAutoConfiguration和@ComponentScan及其默认属性。</p>
+<ul>
+<li>@EnableAutoConfiguration是一个类级注解，这个注解让SpringBoot根据项目添加的jar包的依赖关系来配置Spring。例如<br>spring-boot-starter-web添加了Tomcat和Spring MVC，自动配置假设您正在开发一个Web应用程序并相应地配置Spring。</li>
+<li>@ComponentScan会自动扫描指定包下的全部标有@Component的类，并注册成bean，当然包括@Component下的子注解@Service,<br>@Repository,@Controller。</li>
+<li>@Configuration 表示这个类是配置类，会把这个类中定义的@bean加载到spring容器中。</li>
+</ul>
+<p>通常我们会在主配置类上加上@Configuration, @EnableAutoConfiguration, @ComponentScan这些注解, 因此使用@SpringBootApplication来简化代替。</p>
+<p>此时，你的主配置类(Appliction)要放到根包下, 这样才能扫描到所有包。</p>
+<h3 id="Main-方法"><a href="#Main-方法" class="headerlink" title="Main 方法"></a>Main 方法</h3><p> Main方法调用SpringApplication.Run()来启动应用，然后启动被自动配置的Tomcat.<br> 我们需要将SpringBootApplication.class（Main Application类的类名）作为参数，告诉SpringApplication哪个是主配置类。</p>
 
   
   <div class="footer">
